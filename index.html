@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokyo Arrival Countdown</title>
+    <title>Japan is Calling! Countdown</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,6 @@
             background-attachment: fixed;
         }
         
-        /* Semi-transparent overlay for text readability */
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
             position: absolute;
@@ -35,34 +34,48 @@
             z-index: 2;
         }
 
-        /* Styling for the new minimal countdown numbers */
         .countdown-number {
-            /* Made font smaller and thinner */
             font-size: clamp(2rem, 10vw, 6rem);
-            font-weight: 300; /* Using the thinner font weight */
+            font-weight: 300;
             line-height: 1;
             color: #FFFFFF;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Styling for the labels (Days, Hours, etc.) */
         .countdown-label {
             display: block;
             font-size: clamp(0.7rem, 2.5vw, 1rem);
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: #E5E7EB; /* A slightly off-white for contrast */
+            color: #E5E7EB;
             margin-top: 0.5rem;
+        }
+
+        .itinerary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px; /* Increased max-width for better layout */
+            margin-top: 2rem;
+        }
+        
+        .location-box {
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
-    <div class="content-wrapper min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="content-wrapper min-h-screen flex flex-col items-center justify-center p-4 py-12">
         
         <div class="text-center mb-8 md:mb-12">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-2 text-white" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Tokyo is Calling!</h1>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-2 text-white" style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Japan is Calling!</h1>
             <p class="text-lg md:text-xl text-gray-300">Countdown to our arrival on 17/10/25 @ 06:55 JST</p>
         </div>
 
@@ -87,35 +100,64 @@
         </div>
         
         <div id="welcome-message" class="hidden text-center">
-             <h2 class="text-5xl md:text-7xl font-bold tracking-tight text-white">ようこそ東京へ！</h2>
-             <p class="text-2xl md:text-3xl text-gray-200 mt-2">Welcome to Tokyo!</p>
+             <h2 class="text-5xl md:text-7xl font-bold tracking-tight text-white">ようこそ日本へ！</h2>
+             <p class="text-2xl md:text-3xl text-gray-200 mt-2">Welcome to Japan!</p>
         </div>
 
-        <!-- Sunrise and Sunset Times -->
-        <div class="bg-black/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-lg w-full max-w-2xl">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Tokyo Sunrise & Sunset</h2>
-            <ul class="space-y-4 text-lg">
-                <li class="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                    <span><strong>Fri, 17 Oct:</strong></span>
-                    <span class="text-right">🌅 5:49 AM / 🌇 5:04 PM</span>
-                </li>
-                <li class="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                    <span><strong>Sat, 18 Oct:</strong></span>
-                    <span class="text-right">🌅 5:50 AM / 🌇 5:03 PM</span>
-                </li>
-                <li class="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                    <span><strong>Sun, 19 Oct:</strong></span>
-                    <span class="text-right">🌅 5:51 AM / 🌇 5:01 PM</span>
-                </li>
-                <li class="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                    <span><strong>Mon, 20 Oct:</strong></span>
-                    <span class="text-right">🌅 5:52 AM / 🌇 5:00 PM</span>
-                </li>
-                <li class="flex justify-between items-center p-3 bg-white/10 rounded-lg">
-                    <span><strong>Tue, 21 Oct:</strong></span>
-                    <span class="text-right">🌅 5:53 AM / 🌇 4:59 PM</span>
-                </li>
-            </ul>
+        <!-- Itinerary Grid -->
+        <div class="itinerary-grid">
+            <!-- Tokyo -->
+            <div class="location-box" style="background-color: rgba(21, 94, 117, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Tokyo</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Fri, 17 Oct</strong></span><span class="text-right">🌅 5:49 AM / � 5:04 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Sat, 18 Oct</strong></span><span class="text-right">🌅 5:50 AM / 🌇 5:03 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Sun, 19 Oct</strong></span><span class="text-right">🌅 5:51 AM / 🌇 5:01 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Mon, 20 Oct</strong></span><span class="text-right">🌅 5:52 AM / 🌇 5:00 PM</span></li>
+                </ul>
+            </div>
+            <!-- Kyoto -->
+            <div class="location-box" style="background-color: rgba(180, 83, 9, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Kyoto</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Tue, 21 Oct</strong></span><span class="text-right">🌅 6:05 AM / 🌇 5:12 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Wed, 22 Oct</strong></span><span class="text-right">🌅 6:06 AM / 🌇 5:11 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Thu, 23 Oct</strong></span><span class="text-right">🌅 6:07 AM / 🌇 5:10 PM</span></li>
+                </ul>
+            </div>
+            <!-- Osaka -->
+            <div class="location-box" style="background-color: rgba(107, 33, 168, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Osaka</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Fri, 24 Oct</strong></span><span class="text-right">🌅 6:08 AM / 🌇 5:08 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Sat, 25 Oct</strong></span><span class="text-right">🌅 6:09 AM / 🌇 5:07 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Sun, 26 Oct</strong></span><span class="text-right">🌅 6:10 AM / 🌇 5:06 PM</span></li>
+                </ul>
+            </div>
+            <!-- Hiroshima -->
+            <div class="location-box" style="background-color: rgba(22, 101, 52, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Hiroshima</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Mon, 27 Oct</strong></span><span class="text-right">🌅 6:21 AM / 🌇 5:19 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Tue, 28 Oct</strong></span><span class="text-right">🌅 6:22 AM / 🌇 5:18 PM</span></li>
+                </ul>
+            </div>
+            <!-- Itsukushima -->
+            <div class="location-box" style="background-color: rgba(190, 24, 93, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Itsukushima</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Wed, 29 Oct</strong></span><span class="text-right">🌅 6:23 AM / 🌇 5:17 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Thu, 30 Oct</strong></span><span class="text-right">🌅 6:24 AM / 🌇 5:16 PM</span></li>
+                </ul>
+            </div>
+            <!-- Tokyo (Departure) -->
+            <div class="location-box" style="background-color: rgba(71, 85, 105, 0.4);">
+                <h2 class="text-2xl font-bold text-center mb-4">Tokyo (Departure)</h2>
+                <ul class="space-y-3 text-base">
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Fri, 31 Oct</strong></span><span class="text-right">🌅 6:02 AM / 🌇 4:47 PM</span></li>
+                    <li class="flex justify-between items-center p-2 bg-black/20 rounded-md"><span><strong>Sat, 01 Nov</strong></span><span class="text-right">🌅 6:03 AM / 🌇 4:46 PM</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -124,7 +166,6 @@
         // 06:55 JST (UTC+9) on Oct 17 is 21:55 UTC on Oct 16.
         const targetDate = new Date('2025-10-16T21:55:00Z').getTime();
 
-        // Get the display elements
         const daysEl = document.getElementById('days');
         const hoursEl = document.getElementById('hours');
         const minutesEl = document.getElementById('minutes');
@@ -132,13 +173,10 @@
         const countdownElement = document.getElementById('countdown');
         const welcomeMessageElement = document.getElementById('welcome-message');
 
-        // Update the count down every 1 second
         const interval = setInterval(function() {
-            // Get the current time in UTC to compare against the target UTC time
             const now = new Date().getTime();
             const distance = targetDate - now;
 
-            // If the countdown is finished, show welcome message
             if (distance < 0) {
                 clearInterval(interval);
                 countdownElement.classList.add('hidden');
@@ -146,13 +184,11 @@
                 return;
             }
 
-            // Time calculations
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Update the text content of the elements
             daysEl.textContent = String(days).padStart(2, '0');
             hoursEl.textContent = String(hours).padStart(2, '0');
             minutesEl.textContent = String(minutes).padStart(2, '0');
@@ -162,3 +198,4 @@
     </script>
 </body>
 </html>
+�
